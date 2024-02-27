@@ -1,7 +1,7 @@
 version: '3'
 services:
   db:
-    container_name: ecommerce-altamarc
+    container_name: ${NAME_CONTAINER}
     image: postgres:14.3
     restart: always
     environment:
