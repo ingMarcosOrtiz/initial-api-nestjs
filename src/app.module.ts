@@ -1,7 +1,9 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ReferralsModule } from './referrals/referrals.module';
+import { AuthModule } from './auth/auth.module';
+import { CommonModule } from './common/common.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -16,7 +18,12 @@ import { ReferralsModule } from './referrals/referrals.module';
       autoLoadEntities: true,
       synchronize: true,
     }),
-    ReferralsModule,
+
+    AuthModule,
+
+    CommonModule,
+
+    UsersModule,
   ],
 })
 export class AppModule {}
